@@ -5,7 +5,7 @@ export function Result(){
         <p>Thing</p>
         <p>Job you are looking for</p>
         <p>Things to remember</p>
-        <p>Vibes</p>
+        <p>Vibe</p>
     </div>
   )
 }
