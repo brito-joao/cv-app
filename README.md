@@ -1,2 +1,3 @@
-# cv-app
-Learning react by making a cv application creator
+# Cv application
+
+This project was created to learn how to use React and deploy it to the internet

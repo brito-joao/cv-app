@@ -1,0 +1,46 @@
+body{
+  
+  background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+
+  
+  
+  .app{
+    display: flex;
+    justify-content: center;
+    
+    .inputs{
+      width: 40vw;
+      height: 100vh;
+      background-color:rgb(62, 75, 104);
+      padding: 1em;
+      display: flex;
+      gap:0.5em;
+      *:focus{
+        outline: none;
+      }
+      flex-direction: column;
+      input{
+        color:white;
+        
+        background-color: transparent;
+        border: none;
+        border-bottom: solid 1px black;
+        
+      }
+      
+    }
+    .result{
+      
+      width: 40vw;
+      height: 100vh;
+      background-color: white;
+      color:black;
+      padding: 1em;
+    }
+  }
+  
+}
+
+
+
+
