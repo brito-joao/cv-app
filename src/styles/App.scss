@@ -32,10 +32,28 @@ body{
     .result{
       
       width: 40vw;
-      height: 100vh;
+      height: 60vh;
       background-color: white;
       color:black;
       padding: 1em;
+      display: grid;
+      grid-template-columns: 1fr 4fr ;
+      grid-template-rows: 1fr 1fr 1fr 10fr;
+      h1{
+        margin-left: 0em;
+        font-size: 15.3px;
+        grid-row-start: 1;
+        grid-row-end: 5;
+        background-color: red;
+        padding-top: 1em;
+        
+      }
+      p{
+        font-size: 10px;
+        
+        padding-left: 0.3em;
+        padding-top: 1em;
+      }
     }
   }
   

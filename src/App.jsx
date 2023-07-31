@@ -4,10 +4,18 @@ import {Result} from './components/result.jsx'
 import './styles/App.scss'
 
 function App() {
-
+  const initial_info = {
+    "name":"",
+    "thing": "",
+    "jobs": "",
+    "remember": "",
+    "vibes":"",
+    "color":"white"
+  }
+  const [info, setInfo] = useState(initial_info)
   return <div className='app'>
-    <Inputs/>
-    <Result/>
+    <Inputs info = {info} change = {setInfo}/>
+    <Result info = {info}/>
   </div >
 }
 

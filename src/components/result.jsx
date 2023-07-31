@@ -1,11 +1,13 @@
-export function Result(){
+import { useState } from "react";
+
+export function Result({info}){
     return (
     <div className='result'>
-        <h1>Name</h1>
-        <p>Thing</p>
-        <p>Job you are looking for</p>
-        <p>Things to remember</p>
-        <p>Vibe</p>
+        <h1 style={{backgroundColor:info["color"]}}>{info["name"]}</h1>
+        <p>{info["thing"]}</p>
+        <p>{info["jobs"]}</p>
+        <p>{info["remember"]}</p>
+        <p>{info["vibes"]}</p>
     </div>
   )
 }
