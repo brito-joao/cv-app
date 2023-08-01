@@ -4,28 +4,17 @@ import {Result} from './components/result.jsx'
 import './styles/App.scss'
 
 function App() {
-  const initial_info = {
-    "name":"",
-    "thing": "",
-    "jobs": "",
-    "remember": "",
-    "vibes":"",
-    "color":"white"
-  }
+  const input_info=["name","phone","experience","school","email","your story"];
+  const initial_info = {}
+  input_info.forEach((i_info)=>{
+    initial_info[i_info]="";
+  })
+  initial_info["color"]="white";
   const [info, setInfo] = useState(initial_info)
   return <div className='app'>
-    <Inputs info = {info} change = {setInfo}/>
-    <Result info = {info}/>
+    <Inputs info = {info} change = {setInfo} input_info={input_info}/>
+    <Result info = {info} input_info={input_info}/>
   </div >
 }
-
-//goal for the next day :
-// work on the "back-end" part
-
-//create a connection between inputs and Result
-
-
-
-
 
 export default App

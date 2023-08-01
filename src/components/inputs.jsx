@@ -1,27 +1,25 @@
 import { useState } from "react";
 
 
-export function Inputs({info,change}){
+export function Inputs({info,change,input_info}){
   
   function handleInputChange(event){
 
     let id = event.target.placeholder;
     let value = event.target.value;
-    console.log(id,info[id],event);
+    
     const new_info = {...info};
     new_info[id] = value;
     change(new_info);
     
-    console.log(info);
+    ;
   }
+  
+  const input_list = input_info.map((option)=>{return <input key={option}  placeholder={option} value={info[option]} onChange={(event)=>{handleInputChange(event)}}/>})
     return (
     <div className='inputs'>
         <h1>Cv creator</h1>
-        <input placeholder='name' value={info["name"]} onChange={(event)=>{handleInputChange(event)}}/>
-        <input placeholder='thing' value={info["thing"]} onChange={(event)=>{handleInputChange(event)}}/>
-        <input placeholder='jobs' value={info["jobs"]} onChange={(event)=>{handleInputChange(event)}}/>
-        <input placeholder='remember' value={info["remember"]} onChange={(event)=>{handleInputChange(event)}}/>
-        <input placeholder='vibes' value={info["vibes"]} onChange={(event)=>{handleInputChange(event)}}/>
+        {input_list}
         <Colors info={info} changeInfo={change}/>
   </div>
   )
@@ -35,14 +33,14 @@ function Colors({info,changeInfo}){
     new_info["color"]=color;
     changeInfo(new_info);
   }
+  const colors=["grey","green","blue","white","yellow","purple"];
+  const button_list = colors.map((color)=>{return <button key={color} style={{backgroundColor:color,borderRadius:"100em"}} className="color" onClick={changeColor} ></button>})
   return( <div style={{
     display:"flex",
     gap:"1em",
     width:"1em",
     
   }}>
-    <button style={{backgroundColor:"grey",borderRadius:"100em"}} className="color" onClick={changeColor}></button>
-    <button style={{backgroundColor:"red",borderRadius:"100em"}} className="color" onClick={changeColor}></button>
-    <button style={{backgroundColor:"white",borderRadius:"100em"}} className="color" onClick={changeColor}></button>
+    {button_list}
   </div>)
 }
